@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home</title>
+
+    <!-- font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- navbar section starts  -->
+    <header class="container">
+      <nav class="navbar">
+        <a class="nav-link" href="#">lorem.ipsum</a>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="#"> <i class="fas fa-home"></i> <span>home</span> </a>
+          </li>
+          <li class="nav-item">
+            <a href="#gallery">
+              <i class="fas fa-briefcase"></i> <span>gallery</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact">
+              <i class="fas fa-address-book"></i> <span>contact</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- navbar section ends -->
+
+    <!-- home section starts  -->
+
+    <section class="home container">
+      <div class="image">
+        <img src="images/profile.jpg" alt="" />
+      </div>
+      <div class="content">
+        <h3>hi, i am Lorem ipsum</h3>
+        <span>Lorem, ipsum dolor sit amet consectetur</span>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet porro
+          facere expedita ab atque a consectetur odit vel soluta itaque.
+        </p>
+        <a href="#gallery" class="btn"> my works </a>
+      </div>
+    </section>
+
+    <!-- home section ends -->
+
+    <!-- gallery section starts  -->
+
+    <section id="gallery " class="gallery container">
+      <h1 class="heading"><span>my</span> work</h1>
+
+      <div class="box-container">
+        <div class="box">
+          <img src="images/1.jpg" alt="" />
+        </div>
+
+        <div class="box">
+          <img src="images/2.jpg" alt="" />
+        </div>
+
+        <div class="box">
+          <img src="images/3.jpg" alt="" />
+        </div>
+
+        <div class="box">
+          <img src="images/4.jpg" alt="" />
+        </div>
+
+        <div class="box">
+          <img src="images/5.jpg" alt="" />
+        </div>
+
+        <div class="box">
+          <img src="images/6.jpg" alt="" />
+        </div>
+
+        <div class="box">
+          <img src="images/7.jpg" alt="" />
+        </div>
+
+        <div class="box">
+          <img src="images/8.jpg" alt="" />
+        </div>
+
+        <div class="box">
+          <img src="images/9.jpg" alt="" />
+        </div>
+      </div>
+
+      <div class="pop-up">
+        <span>&times;</span>
+        <img src="images/img-1.jpg" alt="" />
+      </div>
+
+      <a href="#" class="btn">load more</a>
+    </section>
+
+    <!-- gallery section ends -->
+
+    <!-- contact section starts  -->
+
+    <section id="contact" class="contact container">
+      <h1 class="heading">contact <span>me</span></h1>
+
+      <div class="row">
+        <div class="info-container">
+          <div class="box-container">
+            <div class="box">
+              <i class="fas fa-map"></i>
+              <div class="info">
+                <h3>address :</h3>
+                <p>kolkata, india</p>
+              </div>
+            </div>
+
+            <div class="box">
+              <i class="fas fa-envelope"></i>
+              <div class="info">
+                <h3>email :</h3>
+                <p>email@example.com</p>
+              </div>
+            </div>
+
+            <div class="box">
+              <i class="fas fa-phone"></i>
+              <div class="info">
+                <h3>number :</h3>
+                <p>+123-456-7890</p>
+              </div>
+            </div>
+          </div>
+          <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-500px"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-flickr"></a>
+          </div>
+        </div>
+
+        <form>
+          <div class="input-box">
+            <input type="text" placeholder="your name" />
+            <input type="email" placeholder="your email" />
+          </div>
+
+          <textarea
+            name=""
+            placeholder="your message"
+            id=""
+            cols="30"
+            rows="10"
+          ></textarea>
+
+          <input type="submit" value="send message" class="btn" />
+        </form>
+      </div>
+    </section>
+
+    <!-- contact section ends -->
+
+    <!-- smooth scroll javascript -->
+    <script>
+      document.querySelectorAll('nav a[href^="#"]').forEach((trigger) => {
+        trigger.onclick = function (e) {
+          e.preventDefault();
+          const offsetPosition =
+            document.querySelector(this.getAttribute('href')).offsetTop - 100;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth',
+          });
+        };
+      });
+
+      document.querySelectorAll('.gallery img').forEach((image) => {
+        image.onclick = () => {
+          document.querySelector('.pop-up').style.display = 'block';
+          document.querySelector('.pop-up img').src = image.getAttribute('src');
+        };
+      });
+
+      document.querySelector('.pop-up span').onclick = () => {
+        document.querySelector('.pop-up').style.display = 'none';
+      };
+    </script>
+  </body>
+</html>
