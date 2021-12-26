@@ -30,7 +30,6 @@
   text-decoration: none;
   outline: none;
   border: none;
-  text-transform: capitalize;
 }
 
 html {
@@ -57,12 +56,45 @@ body {
   padding-bottom: 6.5rem;
 }
 
+#loader {
+  width: 8.5rem;
+  height: 10rem;
+  --c: linear-gradient(var(--primary-color) 0 0);
+  background: var(--c) 0% 50%, var(--c) 50% 50%, var(--c) 100% 50%;
+  background-size: 1.5rem 50%;
+  background-repeat: no-repeat;
+  animation: spin 1s infinite linear alternate;
+}
+
+@keyframes spin {
+  20% {
+    background-size: 1.5rem 20%, 1.5rem 50%, 1.5rem 50%;
+  }
+  40% {
+    background-size: 1.5rem 100%, 1.5rem 20%, 1.5rem 50%;
+  }
+  60% {
+    background-size: 1.5rem 50%, 1.5rem 100%, 1.5rem 20%;
+  }
+  80% {
+    background-size: 1.5rem 50%, 1.5rem 50%, 1.5rem 100%;
+  }
+}
+
+.center {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
 section {
   padding: 5rem 9%;
 }
 
 .heading {
-  /* text-align: center; */
   font-size: 6vw;
   color: var(--secondary-color);
   margin-bottom: 2rem;
@@ -115,7 +147,6 @@ section {
 
 .navbar a {
   text-decoration: none;
-  /* padding: 2rem; */
   font-size: 2rem;
   background: var(--background-color);
   flex: 1;
@@ -227,7 +258,7 @@ li {
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 2);
   height: 100%;
   width: 100%;
   z-index: 100;
@@ -407,7 +438,7 @@ li {
 
   .gallery .pop-up img {
     width: 85%;
-    height: 85%;
+    max-height: 85%;
   }
 
   .contact .row form .input-box input {

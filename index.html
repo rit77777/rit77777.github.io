@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <div id="loader" class="center"></div>
     <!-- navbar section starts  -->
     <header class="container">
       <nav class="navbar">
@@ -65,48 +66,48 @@
 
       <div class="box-container">
         <div class="box">
-          <img src="images/1.jpg" alt="" />
+          <img src="compress/1.jpg" alt="" />
         </div>
 
         <div class="box">
-          <img src="images/2.jpg" alt="" />
+          <img src="compress/2.jpg" alt="" />
         </div>
 
         <div class="box">
-          <img src="images/3.jpg" alt="" />
+          <img src="compress/3.jpg" alt="" />
         </div>
 
         <div class="box">
-          <img src="images/4.jpg" alt="" />
+          <img src="compress/4.jpg" alt="" />
         </div>
 
         <div class="box">
-          <img src="images/5.jpg" alt="" />
+          <img src="compress/5.jpg" alt="" />
         </div>
 
         <div class="box">
-          <img src="images/6.jpg" alt="" />
+          <img src="compress/6.jpg" alt="" />
         </div>
 
         <div class="box">
-          <img src="images/7.jpg" alt="" />
+          <img src="compress/7.jpg" alt="" />
         </div>
 
         <div class="box">
-          <img src="images/8.jpg" alt="" />
+          <img src="compress/8.jpg" alt="" />
         </div>
 
         <div class="box">
-          <img src="images/9.jpg" alt="" />
+          <img src="compress/9.jpg" alt="" />
         </div>
       </div>
 
       <div class="pop-up">
         <span>&times;</span>
-        <img src="images/img-1.jpg" alt="" />
+        <img src="compress/1.jpg" alt="" />
       </div>
 
-      <a href="#" class="btn">load more</a>
+      <!-- <a href="#" class="btn">load more</a> -->
     </section>
 
     <!-- gallery section ends -->
@@ -174,6 +175,16 @@
 
     <!-- smooth scroll javascript -->
     <script>
+      document.onreadystatechange = function () {
+        if (document.readyState !== 'complete') {
+          document.querySelector('body').style.visibility = 'hidden';
+          document.querySelector('#loader').style.visibility = 'visible';
+        } else {
+          document.querySelector('#loader').style.display = 'none';
+          document.querySelector('body').style.visibility = 'visible';
+        }
+      };
+
       document.querySelectorAll('nav a[href^="#"]').forEach((trigger) => {
         trigger.onclick = function (e) {
           e.preventDefault();
